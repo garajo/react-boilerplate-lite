@@ -1,7 +1,6 @@
-import React from "react";
 import { shallow } from "enzyme";
+import React from "react";
 import { App } from "./App";
-
 
 describe("App", () => {
   it("adds bang after making a bang", () => {

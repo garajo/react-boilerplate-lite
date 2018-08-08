@@ -8,7 +8,7 @@ const CSS_LOADER_OPTIONS = "sourceMap&localIdentName=[name]--[hash:base64:5]";
 
 module.exports = {
   entry: {
-    app: [path.resolve("src/index.jsx")],
+    app: [path.resolve("src/index.tsx")],
   },
 
   output: {
@@ -19,7 +19,7 @@ module.exports = {
   },
 
   resolve: {
-    extensions: [".js", ".jsx"],
+    extensions: [".ts", ".tsx", ".js"],
   },
 
   plugins: [
@@ -31,12 +31,7 @@ module.exports = {
 
   module: {
     rules: [
-      {
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
-        loader: "babel-loader",
-        options: { cacheDirectory: process.env.NODE_ENV === "development" },
-      },
+      { test: /\.tsx?$/, loader: "awesome-typescript-loader" },
       { test: /\.css$/, loader: ["style-loader", `css-loader?${CSS_LOADER_OPTIONS}`] },
     ],
   },

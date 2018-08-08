@@ -1,19 +1,18 @@
-import { hot } from "react-hot-loader";
 import React, { Component } from "react";
+import { hot } from "react-hot-loader";
 
-import cls from "./App.css";
+const cls = require("./App.css");
 
-
-export class App extends Component {
-  state = {
+export class App extends Component<{}, { text: string }> {
+  public state = {
     text: "Hello, World!",
   };
 
-  bang = () => {
+  public bang = () => {
     this.setState(({ text }) => ({ text: `${text}!` }));
-  };
+  }
 
-  render() {
+  public render() {
     const { text } = this.state;
 
     return (
